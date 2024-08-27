@@ -1,0 +1,11 @@
+# Use an official OpenJDK 21 runtime as a parent image
+FROM openjdk:21-jdk-alpine
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the JAR file to the container
+COPY target/votingApp-0.0.1-SNAPSHOT.jar /app/votingApp.jar
+
+# Run the Spring Boot application
+ENTRYPOINT ["java", "-jar", "/app/votingApp.jar"]
